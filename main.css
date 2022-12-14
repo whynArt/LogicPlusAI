@@ -1,0 +1,66 @@
+body{
+	background-image:url(background_image.png);
+	font-family: Georgia, 'Times New Roman', Times, serif;
+	
+	
+}
+.submit-button {
+	width: 10vw;
+	height: 4vh;
+	font-family: Georgia, 'Times New Roman', Times, serif;
+	border-radius: 5px;
+	border-color: lightgrey;
+}
+.go-back {
+	width: 10vw;
+	height: 4vh;
+	margin-top: -72vh;
+	margin-left: 3vw;
+}
+#gameArea{
+	width: 60vw;
+	margin:auto;
+	margin-top: 20vh;;
+	font-size: 1h;
+	font-size: 1vw;
+	padding:4px;
+	background-color:lightgray;
+	min-height:400px;
+	border-radius: 20px;
+}
+
+#wordBox{
+	border:2px rgb(21, 22, 24) solid; 
+	border-radius:3px;
+	margin-left:20.30vw;
+	padding:10px;
+	width:350px;
+	
+}
+
+#inputBox{
+	border:2px rgb(29, 30, 32) solid; 
+	border-radius:3px;
+	margin-left:21.5vw;
+	padding:10px;
+	width:300px;
+	
+}
+
+ 
+@media screen and (max-width:900px){
+	#gameArea{
+		width:96%;
+		padding:2%;
+	}
+}
+
+@media screen and (max-width:400px){
+	#wordBox{
+		width:199px;
+	}
+	#inputBox{
+		width:199px;
+	}
+}
+ 

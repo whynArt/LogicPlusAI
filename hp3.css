@@ -1,0 +1,213 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+body {
+    box-sizing: border-box;
+    font-family: sans-serif;
+    height: 700vh;
+    width: 100vw;
+}
+.main-body {
+    background-color: rgb(84, 131, 177);
+    height: 700vh;
+    width: 100vw;
+}
+.menu-bar {
+    text-align: center;
+    background: none;
+    width: 100vw;
+}
+.menu-bar ul {
+    display: inline-flex;
+    list-style: none;
+    color: #fff;
+}
+.menu-bar ul li {
+    width: 250px;
+    margin: 15px;
+    padding: 15px;
+    margin-left: 30px;
+    margin-right: 30px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+.menu-bar ul li a {
+    text-decoration: none;
+    color: #fff;
+}
+.active, .menu-bar ul li:hover
+{
+    background: rgb(109, 167, 225);
+    border-radius: 3px;
+}
+.menu-bar .fa {
+    margin-right: 5px;
+}
+.sub-menu-1 {
+    display: none;
+}
+.menu-bar ul li:hover .sub-menu-1 {
+    display: block;
+    position: absolute;
+    background: rgb(84, 131, 177);
+    margin-top: 1vh;
+    margin-left: -2.5vw;
+}
+.menu-bar ul li:hover .sub-menu-1 ul {
+    display: block;
+    margin: 1px;
+}
+h1 {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 3vw;
+    font-size: 3vh;
+}
+h2 {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 1.5vw;
+    font-size: 2.5vh;
+}
+h3 {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 1.5vw;
+    font-size: 1.5vh;
+}
+p {
+    font-size: 1.5vw;
+    font-size: 1.5vh;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+.bg-image {
+    padding: 0;
+    background-color: #AEBDCA;
+    height: 700vh;
+    width: 100vw;
+    margin-top: 0;
+}
+.space {
+    height: 20px;
+}
+.header {
+    text-align: center;
+    padding: 20px;
+    height: 5vh;
+    width: 20vw;
+    margin-top: 2vh;
+    margin-left: 38vw;
+    background-color: #fff;
+    border-radius: 10px;
+}
+.mid {
+    height: 250vh;
+    width: 72vw;
+    margin-left: 20vw;
+    margin-top: 20vh;
+}
+.container {
+    width: 55vw;
+    height: 45vh;
+    background-color: #fff;
+    border-radius: 10px;
+    margin-left: 0vw;
+    margin-top: 0vh;
+    padding: 30px;
+    position: absolute;
+    text-align: center;
+}
+.image {
+    height: 50vh;
+    width: 60vw;
+    margin-top: -2vh;
+    margin-left: -2vw;
+    position: static;
+}
+.container-1 {
+    width: 55vw;
+    height: 45vh;
+    background-color: #fff;
+    border-radius: 10px;
+    margin-top: 60vh;
+    padding: 30px;
+    position: absolute;
+}
+.container-2 {
+    width: 55vw;
+    height: 40vh;
+    background-color: #fff;
+    border-radius: 10px;
+    margin-top: 120vh;
+    padding: 30px;
+    position: absolute;
+}
+.container-5 {
+    width: 55vw;
+    height: 50vh;
+    background-color: #fff;
+    border-radius: 10px;
+    margin-top: 190vh;
+    padding: 30px;
+    position: absolute;
+    text-align: center;
+}
+.container-6 {
+    width: 55vw;
+    height: 45vh;
+    background-color: #fff;
+    border-radius: 10px;
+    margin-top: 255vh;
+    padding: 30px;
+    position: absolute;
+}
+.container-7 {
+    width: 55vw;
+    height: 50vh;
+    background-color: #fff;
+    border-radius: 10px;
+    margin-top: 315vh;
+    padding: 30px;
+    position: absolute;
+}
+.image1 {
+    height: 50vh;
+    width: 55vw;
+    margin-top: 0vh;
+    margin-left: 0vw;
+    position: static;
+}
+.container-8 {
+    width: 55vw;
+    height: 55vh;
+    background-color: #fff;
+    border-radius: 10px;
+    margin-top: 400vh;
+    padding: 30px;
+    position: absolute;
+    text-align: center;
+}
+.container-9 {
+    width: 55vw;
+    height: 50vh;
+    background-color: #fff;
+    border-radius: 10px;
+    margin-top: 470vh;
+    padding: 30px;
+    position: absolute;
+}
+.container-10 {
+    width: 55vw;
+    height: 50vh;
+    background-color: #fff;
+    border-radius: 10px;
+    margin-top: 535vh;
+    padding: 30px;
+    position: absolute;
+}
+.container-11 {
+    width: 55vw;
+    height: 50vh;
+    background-color: #fff;
+    border-radius: 10px;
+    margin-top: 600vh;
+    padding: 30px;
+    position: absolute;
+}

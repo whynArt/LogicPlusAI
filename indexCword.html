@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            
+            iframe{
+                border-width: 0ch;
+            }
+            .myDiv {
+                border: transparent;    
+                text-align: center;
+                margin-top: 5vh;
+                margin-left: 2vw;
+                margin-right: 50px;
+                background-image: url(bg.jpeg) ;
+                background-position: absolute;
+                background-repeat: no-repeat;  
+                background-size: cover;
+            }
+
+            .submit-button {
+                margin-top: 2vh;
+                margin-left: 5vw;
+                width: 10vw;
+                height: 4vh;
+                border-radius: 5px;
+                border-color: lightgrey;
+                font-family: Georgia, 'Times New Roman', Times, serif;
+            }
+            h1 {
+                font-family: Georgia, 'Times New Roman', Times, serif;
+            }
+            body{
+                background-image: url(9.jpg);
+                background-size: cover;
+                background-repeat: no-repeat;  
+                height: 100vh;
+                width: 100vw;
+                
+            }
+
+        </style>
+        <button id="myButton" class="submit-button" >Go Back</button>
+
+        <script type="text/javascript">
+            document.getElementById("myButton").onclick = function () {
+                location.href = "index.html";
+            };
+        </script>
+
+    </head>
+
+    <body>
+
+
+        <div class="myDiv">
+            <iframeset cosl="50%,50%" >
+                <iframe src="Index5.html" height="600" width="600"  title="Iframe Example" ></iframe>  
+                <iframe src="index7.html" height="600" width="600" title="Iframe Example" ></iframe>
+            </iframeset>
+        </div>
+    </body>
+</html>

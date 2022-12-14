@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Cross word Puzzel</title>
+<style>
+body{
+    background-color:none;
+	font-size: 16px;
+}
+
+#cross{
+	text-align: center;
+	width:30px;
+	height:30px;
+	margin: 0;
+	padding: 0;
+	border-collapse: collapse;
+	border: 1px solid white;
+	
+}
+#buttons{
+	width:30%;
+	float: right;
+	font-family: Georgia, 'Times New Roman', Times, serif;
+}
+tr{
+	margin: 0;
+	padding: 0;
+	border-collapse: collapse;
+}
+td{
+	height: 30px;
+	width: 30px;
+}
+#leftBox{
+	margin-left: 40px;
+	margin-top: 60px;
+}
+#rightBox{
+	float: left;
+	clear:left;
+	
+}
+.butt{
+	height:40px;
+	width: 100px;
+	margin-left: 20px;
+	font-family: Georgia, 'Times New Roman', Times, serif;
+}
+#puzzel{
+	text-align: center;
+	margin: 0;
+	padding: 0;
+	border-collapse: collapse;
+	border: 1px solid black;
+}
+.inputBox{
+		width: 40px;
+		height:40px;
+		border: 1px solid black;
+		text-align: center;
+		font-size: 16px;;
+		font-family: arial;
+		font-weight: bolder;
+}
+
+</style>
+
+<script>
+//Globals
+var currentTextInput;
+var puzzelArrayData;
+//Loads the Crossword
+function initializeScreen(){
+	var puzzelTable = document.getElementById("puzzel");
+	puzzelArrayData = preparePuzzelArray();
+	for ( var i = 0; i < puzzelArrayData.length ; i++ ) {
+		var row = puzzelTable.insertRow(-1);
+		var rowData = puzzelArrayData[i];
+		for(var j = 0 ; j < rowData.length ; j++){
+			var cell = row.insertCell(-1);
+			if(rowData[j] != 0){
+				var txtID = String('txt' + '_' + i + '_' + j);
+				cell.innerHTML = '<input type="text" class="inputBox" maxlength="1" style="text-transform: uppercase" ' + 'id="' + txtID + '" onfocus="textInputFocus(' + "'" + txtID + "'"+ ')">';
+			}else{
+				cell.style.backgroundColor  = "black";
+			}
+		}
+	}
+	addHint();
+}
+//Adds the hint numbers
+function addHint(){
+	document.getElementById("txt_0_1").placeholder = "1";
+	document.getElementById("txt_2_0").placeholder = "4";
+	document.getElementById("txt_4_0").placeholder = "7";
+	document.getElementById("txt_2_5").placeholder = "6";
+	document.getElementById("txt_4_4").placeholder = "9";
+	document.getElementById("txt_5_6").placeholder = "11";
+    document.getElementById("txt_6_1").placeholder = "13";
+    document.getElementById("txt_8_1").placeholder = "15";
+    document.getElementById("txt_9_4").placeholder = "17";
+    document.getElementById("txt_0_2").placeholder = "2";
+    document.getElementById("txt_0_7").placeholder = "3";
+    document.getElementById("txt_2_3").placeholder = "5";
+    document.getElementById("txt_4_2").placeholder = "8";
+    document.getElementById("txt_4_4").placeholder = "9";
+    document.getElementById("txt_4_6").placeholder = "10";
+    document.getElementById("txt_5_8").placeholder = "12";
+    document.getElementById("txt_6_3").placeholder = "14";
+    document.getElementById("txt_8_4").placeholder = "16";
+    
+}
+//Stores ID of the selected cell into currentTextInput
+function textInputFocus(txtID123){
+	currentTextInput = txtID123;
+}
+//Returns Array
+function preparePuzzelArray(){
+var items = [	[0, 8, 6, 9, 0, 0, 0, 6, 0, ],
+				[0, 0, 5, 0, 0, 0, 0, 5, 0,  ],
+				[5, 3, 1, 3, 0, 3, 5, 4, 0, ],
+				[9, 0, 0, 2, 0, 6, 0, 5, 0, ],
+				[3, 3, 2, 0, 4, 5, 2, 0, 0,],
+				[0, 0, 4, 0, 5, 0, 5, 8, 1, ],
+				[0, 9, 5, 3, 3, 0, 6, 0, 6, ],
+				[0, 0, 0, 5, 0, 0, 0, 0, 0, ],
+				[0, 3, 6, 9, 4, 0, 0, 0, 0, ],
+				[0, 0, 0, 0, 5, 9, 6, 0, 0, ],
+				
+			];
+return items;
+}
+//Clear All Button
+function clearAllClicked(){
+	currentTextInput = '';
+	var puzzelTable = document.getElementById("puzzel");
+	puzzelTable.innerHTML = '';
+    initializeScreen();
+}
+//Check button
+function checkClicked(){
+	for ( var i = 0; i < puzzelArrayData.length ; i++ ) {
+		var rowData = puzzelArrayData[i];
+		for(var j = 0 ; j < rowData.length ; j++){
+			if(rowData[j] != 0){
+				var selectedInputTextElement = document.getElementById('txt' + '_' + i + '_' + j);
+				if(selectedInputTextElement.value != puzzelArrayData[i][j]){
+					selectedInputTextElement.style.backgroundColor = '#FA2B2B';
+					
+				}else{
+					selectedInputTextElement.style.backgroundColor = '#14C165';
+				}
+			}
+		}
+	}
+}
+//Clue Button
+function clueClicked(){
+	if (currentTextInput != null){
+		var temp1 = currentTextInput;
+		var token = temp1.split("_");
+		var row = token[1];
+		var column = token[2];
+		document.getElementById(temp1).value = puzzelArrayData[row][column];
+		//checkClicked();
+	}
+}
+//Solve Button
+function solveClicked(){
+	if (currentTextInput != null){
+		var temp1 = currentTextInput;
+		var token = temp1.split("_");
+		var row = token[1];
+		var column = token[2];
+		
+		// Print elements on top
+		for(j = row; j >= 0; j--){
+			if(puzzelArrayData[j][column] != 0){
+				document.getElementById('txt' + '_' + j + '_' + column).value = puzzelArrayData[j][column];
+				}else break;
+		}
+		// Print elements on right
+		for(i = column; i< puzzelArrayData[row].length; i++){
+			if(puzzelArrayData[row][i] != 0){
+				document.getElementById('txt' + '_' + row + '_' + i).value = puzzelArrayData[row][i];
+				}else break;
+		}
+		
+		// Print elements below
+		for(m = row; m< puzzelArrayData.length; m++){
+			if(puzzelArrayData[m][column] != 0){
+				document.getElementById('txt' + '_' + m + '_' + column).value = puzzelArrayData[m][column];
+				}else break;
+		}
+		// Print elements on left
+		for(k = column; k >= 0; k--){
+			if(puzzelArrayData[row][k] != 0){
+				document.getElementById('txt' + '_' + row + '_' + k).value = puzzelArrayData[row][k];
+				}else break;
+		}
+		// Done!
+		
+	}
+}
+</script>
+</head>
+<body onload="initializeScreen()">
+<div id="leftBox">
+<table id="puzzel">
+
+</table>
+</div>
+<div id="rightBox">
+<table>
+	<tr><td><input class="butt"  type="submit" value="Clear All" onclick="clearAllClicked()"></td>
+	<td><input class="butt"  type="submit" value="Check" onclick="checkClicked()"></td>
+	<td><input class="butt"  type="submit" value="Solve" onclick="solveClicked()"></td>
+	<td><input class="butt"  type="submit" value="Clue" onclick="clueClicked()"></td></tr>
+</table>
+
+</body>
+</html>
